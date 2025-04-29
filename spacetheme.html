@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cartoon Space Adventure</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    body {
+      background-image: url('https://img.freepik.com/free-photo/view-animated-cartoon-planets-with-astronaut_23-2151699369.jpg?semt=ais_hybrid&w=740');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+      color: white;
+      text-shadow: 2px 2px 5px #000;
+      animation: moveBackground 60s infinite linear;
+    }
+
+    /* Animation for background */
+    @keyframes moveBackground {
+      0% {
+        background-position: center;
+      }
+      100% {
+        background-position: right;
+      }
+    }
+
+    h1 {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px 40px;
+      border-radius: 20px;
+      text-align: center;
+      font-size: 2.5em;
+      text-shadow: 0 0 20px #fff, 0 0 30px #0af, 0 0 40px #0af, 0 0 50px #0af;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+
+    /* Glowing text effect */
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #0af, 0 0 30px #0af;
+      }
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #0af, 0 0 40px #0af;
+      }
+    }
+
+    .button-container {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+      border-radius: 25px;
+      padding: 30px 50px;
+      display: flex;
+      gap: 20px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .button-container:hover {
+      transform: scale(1.05);
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #0a74da;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    button:hover {
+      background-color: #034f84;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+    }
+
+    button:active {
+      background-color: #023e67;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    button:focus {
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to Cartoon Space Adventure!</h1>
+
+  <div class="button-container">
+    <button onclick="startAdventure()">Start</button>
+    <button onclick="exitAdventure()">Exit</button>
+  </div>
+
+  <script>
+    function startAdventure() {
+      alert("The adventure begins! 🚀");
+      // You can add any additional functionality here for the adventure
+    }
+
+    function exitAdventure() {
+      window.close(); // This will attempt to close the current window
+      // Alternatively, you can redirect to a different page:
+      // window.location.href = 'https://www.example.com';
+    }
+  </script>
+</body>
+</html>
